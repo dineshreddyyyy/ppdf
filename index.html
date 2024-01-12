@@ -1,0 +1,253 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <br>
+    <br>
+   
+    
+    <h4>Chapter VI </h4>
+    <h1>Data Mining Based on<br>
+    Rough Sets</h1>
+    <h6>Jerzy W. Grzymala-Busse<br>
+    University of Kansas,USA<br>
+        <br>
+        <br>
+    Wojciech Ziarko<br>
+    University of Regina,Canada</h6>
+    <h2>ABSTRACT</h2>
+    <p class="italic">The chapter is focused on the data mining aspect of the applications of rough set theory.
+Consequently, the theoretical part is minimized to emphasize the practical application side of the rough set approach in the context of data analysis and model-building applications. Initially, the original rough set approach is presented and illustrated with detailed examples showing how data can be analyzed with this approach. The next section illustrates the Variable Precision Rough Set Model (VPRSM) to expose similarities and differences between these two approaches. Then, the data mining system LERS, based on a different generalization of the original rough set theory than VPRSM, is presented. Brief descriptions of algorithms are also cited. Finally, some
+applications of the LERS data mining system are listed</p>
+    <h2>INTRODUCTION</h2>
+    <div>Discovering useful models capturing regularities of natural phenomena or complex
+systems was, until recently, almost entirely limited to finding formulas fitting empirical
+data. This worked relatively well in physics, theoretical mechanics, and other classical
+and fundamental areas of Science and Engineering. However, in social sciences, market
+research, medical area, pharmacy, molecular biology, learning and perception in biology,
+and in many other areas, the complexities of the natural processes and their common lack
+        of analytical “smoothness” almost totally exclude the possibility of using standard</div>
+    <br>
+    <br>
+    <br>
+    <br>
+ 
+  <div>mathematical tools for the purpose of data-based modeling. To serve the modeling needs
+of all these areas, a fundamentally different approach is needed. The availability of fast
+data processors creates new possibilities in that respect. To take advantage of the
+possibilities, new mathematical theories oriented towards creating and manipulating
+empirical functions and relations need to be developed. In fact, this need for alternative
+approaches to modeling from data was recognized some time ago by researchers working
+in the areas of neural nets, inductive learning, rough sets, and, more recently, in the area
+of data mining. The models, in the form of data-based structures of decision tables or
+rules, play a similar role to formulas in classical analytical modeling. Such theories can
+be analyzed, interpreted, and optimized using the methods of rough set theory.
+ In this chapter, we are assuming that the reader is familiar with basic concepts of
+      set theory and probability theory</div>
+    <h3>General Overview of Rough Set Theory</h3>
+    <div>The theory of rough sets (RST) was originated by Pawlak in 1982 as a formal
+mathematical theory, modeling knowledge about the domain of interest in terms of a
+collection of equivalence relations (Pawlak, 1982). Its main application area is in
+acquisition, analysis, and optimization of computer-processible models from data. The
+models can represent functional, partial functional, and probabilistic relations existing
+in data in the extended rough set approaches (Katzberg  Ziarko, 1996; Ziarko, 1993,
+1999). The main advantage of rough set theory is that it does not need any preliminary
+or additional information about data (like probability in probability theory, grade of
+        membership in fuzzy set theory, etc.) (Grzymala-Busse, 1988)</div>
+    <br>
+    <p class="italic">The Original Rough Set Model</p>
+  <div>The original rough set model is concerned with investigating the properties and the
+limitations of knowledge with respect to being able to form discriminative descriptions
+of subsets of the domain. The model is also used to investigate and prove numerous
+useful algebraic and logical properties of the knowledge and approximately defined sets,
+called rough sets. The inclusion of the approximately defined sets in the rough set model
+is a consequence of the knowledge imperfections in practical situations. In general, only
+an approximate description of a set can be formed. The approximate description consists
+of definitions of lower approximation and upper approximation. The approximations are
+definable sets, that is, having a discriminative description. The upper approximation is
+the smallest definable set containing the target set. The lower approximation is the largest
+definable set included in the target set. This ability to create approximations of non definable, or rough, sets allows for development of approximate classification algorithms
+for prediction, machine learning, pattern recognition, data mining, etc. In these algorithms, the problem of classifying an observation into an indefinable category, which is
+not tractable in the sense that the discriminating description of the category does not
+exist, is replaced by the problem of classifying the observation into a definable approximation of the category that is tractable. If the approximations are “tight” enough, then
+the likelihood of an error of decisionmaking or prediction based on such an approximate
+classifier is minimal.
+    </div><br>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p class="italic">Variable Precision Rough Set Model (VPRSM)</p>
+    
+    <div>The original rough set theory has been applied with success to a number of
+classification-related problems in control, medicine, machine learning, data mining, etc.
+(see, for example, Polkowski  Skowron, 1998). However, developing practical applications also revealed the limitations of this approach. The most serious one was related
+to the observation that often, when dealing with empirical data such as market survey
+data, it was not possible to identify non-empty lower approximation of the target
+category, for example, of the category of buyers of a service or product. Similarly, it was
+often not possible to identify non-trivial upper approximation of the target category,
+which do not extend over the whole domain. These limitations are the natural consequence of the fact that the classification problems are often inherently non-deterministic.
+This means that the available information does not permit for error-free, deterministic
+classification, even on a subset of the domain. For example, one can never 100% correctly
+predict the buying behavior of a customer based on typical market survey results.
+Consequently, the desire to make rough set model applicable to larger class of
+practical problems leads to the development of a generalized model of rough sets referred
+to as variable precision rough set model (VPRSM) (Ziarko, 1993). As in the original rough
+set model, set approximations are also formed in VPRSM. However, the criteria for
+forming the lower and upper approximations are relaxed, in particular allowing a controlled degree of misclassification in the lower approximation. The resulting lower
+approximation represents an area of the domain where the correct classification can be
+made with the desired probability of success, rather than deterministically. In this way,
+the VPRSM approach can handle large class of problems that require developing nondeterministic predictive models from data. VPRSM preserves all basic properties and
+algorithms of the original rough sets. In particular, the basic algorithms for decision table
+analysis, optimization, and decision rules acquisition are directly inherited by VPRSM
+from the original rough set model (Pawlak, 1991). In VPRSM, they are additionally
+enhanced with the frequency distribution or probabilistic information acquired from data
+(Katzberg  Ziarko, 1996; Ziarko, 1999). As a result, the classifier systems developed
+within the framework of VPRSM have probabilistic confidence factors associated with
+them to reflect the degree of uncertainty in classificatory decisionmaking. The main goal
+of such classifiers is to improve the probability of success rather than hopelessly trying
+        to guarantee 100% correct classification</div>
+    <p class="italic">Decision Tables Acquired From Data</p>
+    <br>
+    <div>When deriving predictive models from data within rough set framework, one of the
+primary constructs is a decision table (Pawlak, 1991). The decision table represents
+knowledge about the domain of interest and the relation between the knowledge and the
+prediction target. Some columns of the table correspond to descriptive attributes used
+to classify objects of the domain of interest; other columns represent prediction targets.
+The rows of the table represent the classes of the classification of the domain in terms
+of the descriptive attributes. If the decision table contains representatives of all or almost
+all classes of the domain, and if the relation with the prediction targets is completely or
+almost completely specified, then the table can be treated as a model of the domain. Such
+a model represents descriptions of all or almost all objects of the domain and their
+        relationship to the prediction target</div><br>
+    <br>
+    
+    <br>
+    
+    <br>
+    <div>The specification of the relationship may include empirical assessments of conditional probabilities, if the VPRSM approach is used in model derivation. The model is
+called a probabilistic decision table. If the model is complete enough, and if the estimates
+of conditional probabilities are relatively close to real values, then the decision table can
+be used as a basis of approximate classifier system. To ensure relative completeness and
+generality of the decision table model, the values of the attributes used to construct the
+classification of the domain need to be sufficiently general. For example, in many practical
+problems, rather than using precise numeric measurements, value ranges are often used
+after preliminary discretization of original precise values (Nguyen, 1998). This conversion of original data values into secondary, less precise representation is one of the major
+pre-processing steps in rough set-based methodology of decision table acquisition from
+data. Once the decision table has been acquired, it can be further analyzed and optimized
+        using classical algorithms for inter-attribute dependency computation and minimal nonredundant subset of attributes (attribute reduct) identification (Pawlak, 19</div>
+    <p class="italic">Rule Generation Based on a Generalization of the Rough Set Theory
+(LERS)</p>
+ <div>The data mining system, Learning from Examples using Rough Sets (LERS), was
+developed at the University of Kansas. The first implementation of LERS was done in
+Franz Lisp in 1988. The current version of LERS, implemented in C++, is a family of data
+mining systems. The LERS system is universal—it may compute rules from any kind of
+data. Computed rule sets may be used for classification of new cases or for interpretation
+of knowledge. One potential application of rule sets is rule-based expert systems.
+The LERS system may compute rules from imperfect data (Grzymala-Busse, 1988,
+1991, 1992), e.g., data with missing attribute values or inconsistent cases. LERS is also
+equipped with a set of discretization schemes to deal with numerical attributes. Similarly,
+a variety of LERS methods may help to handle missing attribute values. But, most
+importantly, LERS accepts inconsistent input data. Two cases are inconsistent when
+they are characterized by the same values of all attributes, but they belong to two different
+concepts. LERS handles inconsistencies using rough set theory. For inconsistent data,
+LERS computes lower and upper approximations of all concepts. The ideas of lower
+and upper approximations are fundamental for rough set theory. LERS uses a different
+generalization of the original rough set theory than VPRSM. Rules formed by LERS are
+equipped with numbers characterizing rule quality (uncertainty). Also, LERS is assisted
+with tools for rule validation: leaving-one-out, ten-fold cross validation, and hold-out.
+LERS has proven its applicability, having been used for two years by NASA
+Johnson Space Center (Automation and Robotics Division), as a tool to develop expert
+systems of the type most likely to be used in medical decisionmaking on board the
+International Space Station. LERS was also used to enhance facility compliance under
+Sections 311, 312, and 313 of Title III of the Emergency Planning and Community Right
+to Know (Grzymala-Busse, 1993). That project was funded by the U. S. Environmental
+Protection Agency. The LERS system was used in other areas as well, e.g., in the medical
+field to compare the effects of warming devices for postoperative patients, to assess
+preterm birth (Woolery  Grzymala-Busse, 1994), and for diagnosis of melanoma
+     (Grzymala-Busse, Grzymala-Busse, Hippe, 2001).</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <p class="italic">LERS Classification System</p>
+    
+    <div>For classification of unseen cases, the LERS system uses a “bucket brigade
+algorithm” (Booker, Goldberg, Holland, 1990; Holland, Holyoak, Nisbett, 1986),
+extended to use partial matching of rules and cases. The decision to which class a case
+belongs is made on the basis of two parameters: strength and support. They are defined
+as follows: Strength is the total number of cases correctly classified by the rule during
+training. The second parameter, support, is defined as the sum of scores of all matching
+rules from the class. As follows from experiments, partial matching is a valuable
+mechanism when complete matching fails (Grzymala-Busse, 1994). In the LERS classification system, the user may use 16 strategies for classification. However, as a result
+of experiments, again, it can be shown that the most successful strategy is based on
+strength, support, and partial matching while ignoring specificity (number of conditions
+in a rule) (Grzymala-Busse  Zou, 1998).
+LERS equips rules with numbers characterizing quality of rules. Thus, like VPRSM,
+LERS goes beyond the original rough set theory. The generalizations of the original
+rough set theory represented by VPRSM and LERS are different. The prime concern of
+VPRSM is forming decision tables, while LERS was designed to form rule sets. However,
+all numbers related with rules and defined on the basis of VPRSM may be computed from
+numbers allocated by LERS to each rule. On the other hand, the LERS classification
+system uses ideas that are foreign to VPRSM, such as specificity, support, and partial
+matching. Thus, the two generalizations are independent and neither can be reduced to
+        the other.</div>
+    <h3>Related Work</h3>
+    <div>The basics of the theory are summarized in Pawlak’s book (Pawlak, 1991). He also
+introduced novel theories of rough functions and rough relations, which directly apply
+to the creation of approximate functional and relational models from data (Pawlak, 1996).
+Since the introduction of the original RST, several extensions of the original model were
+proposed (Greco, Matarazzo, Slowinski, Stephanowski, 2000; Ziarko, 1993). In
+particular, VPRSM was first published in Ziarko (1993) and was further investigated by
+Beynon (2000), Kryszkiewicz (1994), and others, and served as a basis of a new approach
+to inductive logic programming (Mahesvari, Siromoney, Mehata,  Inoue, 2001) . The
+initial notion of a data-acquired decision table, also called an information system, is
+credited to Pawlak (1991). The probabilistic decision tables were introduced by Ziarko
+(1998b). The LERS system was first described in Grzymala-Busse, 1992). Its most
+important algorithm, LEM2, was also presented in Chan and Grzymala-Busse(1994).
+Initial versions of LERS were presented by Budihardjo, Grzymala-Busse , and Woolery
+(1991), and Grzymala-Busse (1997, 1998).
+There exists an extensive body of literature on rough set theory applications to
+knowledge discovery and data mining. A comprehensive review of the state art is
+available in Polkowski and Skowron (1998). A number of sources reported experiments
+with using rough set theory for pattern recognition, including speech recognition,
+handwriting recognition, and music fragment classification (Kostek, 1998; Plonka 
+Mrozek, 1995; Zhao, 1993). The rough set theory was first applied to trainable control
+        by Mrozek (1986) when modeling control behavior of cement mill operators. Important.</div>
+    <br>
+
+   
+    <br>
+    <br>
+    <br>
+    </body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
